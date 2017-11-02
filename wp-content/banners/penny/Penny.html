@@ -1,0 +1,224 @@
+<!-- Penny  Version 1.0  Date:04/NOV/16 Completed By: Gowtham -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Penny</title>
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/keyboard.css" rel="stylesheet" type="text/css" />
+<link href="css/video-js.min.css" rel="stylesheet" type="text/css" />
+<script src="js/video.min.js"></script>
+<script src="js/jquery-1.12.4.js"></script> 
+<script src="js/jquery-ui.js"></script>
+<script src="js/pbkdf2.js"></script>
+<script src="js/aes.js"></script>
+<script src="js/AesUtil.js"></script>
+<script src="js/processsurvey.js"></script> 
+<script src="js/registersurvey1.js"></script>
+ <script src="js/registersurvey2.js"></script> 
+<script src="js/jquery.keyboard.js" type="text/javascript"></script>
+<script src="js/jquery.keyboard.extension-typing.js" type="text/javascript"></script>
+
+<style>
+html, body, table, tr, td,h1,video, p{margin:0;padding:0}
+img,input, video{display:block}
+.touchHere{width:215px;height:155px;margin:0 auto;cursor:pointer;border:0;background:url(images/img-touchhere.jpg) no-repeat}
+.inputField{background:#141318}
+.errorMsg{height: 40px;width:705px;text-align: center;font-size: 24px;color: #f00;position:absolute;top:0;font-family: "Helvetica Neue", Helvetica, sans-serif;}
+td.borderover a, td.borderover img.img-border, td.selected a, td.selected img.img-border {
+	text-align: center;
+	float: left;
+	overflow: hidden;
+	border: none;
+}
+td.borderover:hover a, td.selected a {
+	border: #4CAF50 4px solid;
+}
+td.borderover:hover img.img-border, td.selected img.img-border {
+	margin: -4px;
+}
+.phoneNumber{
+display:block;
+	width:295px;
+	height:35px;
+	margin:0 auto;
+	padding:0 15px;
+	border:2px solid #ccc;
+	background:#fff;
+	font-size:24px;
+	font-weight:700;
+	color:#000;
+	text-align:center;
+	font-family:serif;
+}
+.submitBtn {
+display:block;
+width:112px;
+height:36px;
+margin:10px auto;
+border:0;
+background:url(images/btn-submit.jpg) no-repeat;
+}
+.videoBg{width:1080px;height:624px;overflow:hidden}
+::-webkit-input-placeholder {
+ color: #000;
+}
+:-moz-placeholder {
+ color: #000;
+}
+::-moz-placeholder {
+color: #000;
+}
+:-ms-input-placeholder {
+color: #000;
+}
+</style>
+</head>
+<script>
+$(document).ready(function () {
+videojs("myVideo").ready(function(){
+    this.volume(0);
+});
+
+});
+function clicktag(){
+	$.ajax({
+			type: "GET",
+			url: "https://ad.doubleclick.net/ddm/trackclk/N444804.3093881SKOOLIVE/B11419197.207139643;dc_trk_aid=406907807;dc_trk_cid=94058903", 
+			data: {},
+				success: function(data) {
+					alert(data);
+					//$("#artworkname").html(data);
+					
+				},
+				failure: function(data) {
+					alert("sad");
+				}
+		});
+}
+
+<!-- hide from non-JavaScript browsers
+var axel = Math.random() + "";
+var num = axel * 1000000000000000000;
+document.writeln('<IMG SRC="https://ad.doubleclick.net/ddm/trackimp/N444804.3093881SKOOLIVE/B11419197.207139643;dc_trk_aid=406907807;dc_trk_cid=94058903;ord='+ num +'";dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?" BORDER="0" HEIGHT="1" WIDTH="1" ALT="Advertisement">');
+
+// end hide from browsers -->
+
+</script>
+<body>
+<form id="emailform" name="emailform">
+<input type="hidden"  value ="17" name="client" id="client"/>
+<input type="hidden"  value ="152" name="campaign" id="campaign"/>
+<input type="hidden"  value ="" name="career" id="career"/>
+<table width="1080" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><img src="images/img-pennyheader01.jpg"/></td>
+		<td><img src="images/img-pennyheader02.jpg"/></td>
+		<td><img src="images/img-pennyheader03.jpg"/></td>
+	</tr>
+	<tr><td colspan="3" height="656">
+		<table width="1080" border="0" cellspacing="0" cellpadding="0" id="homePage" style="display:block">
+			<tr>
+				<td><img src="images/img-skateleftbar.jpg"/></td>
+				<td>
+					<img src="images/img-skate22.jpg"/>
+					<input type="button" id="22inch" class="touchHere"/>
+				</td>
+				<td><img src="images/img-skatecenterbar.jpg"/></td>
+				<td>
+					<img src="images/img-skate27.jpg"/>
+					<input type="button" id="27inch" class="touchHere"/>
+				</td>
+				<td><img src="images/img-skateslect01.jpg"/></td>
+				<td><img src="images/img-skateslect02.jpg"/></td>
+				<td><img src="images/img-skateslect03.jpg"/></td>
+			</tr>
+		</table>
+		<table width="1080" border="0" cellspacing="0" cellpadding="0" id="PennySkate22" style="display:none">
+			<tr><td colspan="7" ><div style="position:relative">
+				<div class="errorMsg" id="errorMsg" style="display:none">Error goes Here</div>
+			<img src="images/img-skate22topbar.jpg"/></div></td></tr>
+			<tr>
+				<td><img src="images/img-skateleftbar_02.jpg"/></td>
+				<td class="borderover" value="22-Sweet Tooth"><a href="#"><img class="img-border" src="images/img-sweettooth.jpg"/></a></td>
+				<td class="borderover" value="22-Neon Shade"><a href="#"><img class="img-border" src="images/img-neonshade.jpg"/></a></td>
+				<td class="borderover" value="22-Black Out"><a href="#"><img class="img-border" src="images/img-blackout.jpg"/></a></td>
+				<td class="borderover" value="22-Red Down"><a href="#"><img class="img-border" src="images/img-reddown.jpg"/></a></td>
+				<td><img src="images/img-skaterightbar_02.jpg"/></td>
+				<td><img src="images/img-skateselectver01.jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="borderover" value="22-Burgandy"><a href="#"><img class="img-border" src="images/img-burgandy.jpg"/></a></td>
+				<td class="borderover" value="22-Toucan Tropicana"><a href="#"><img class="img-border" src="images/img-toucantropicana.jpg"/></a></td>
+				<td class="borderover" value="22-Ethiopia"><a href="#"><img class="img-border" src="images/img-ethiopia.jpg"/></a></td>
+				<td class="borderover" value="22-Neo Tokyo"><a href="#"><img class="img-border" src="images/img-neotokyo.jpg"/></a></td>
+				<td></td>
+				<td><img src="images/img-skateselectver02.jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="borderover" value="22-Idigo Tie Dye"><a href="#"><img class="img-border" src="images/img-idigotiedye.jpg"/></a></td>
+				<td class="borderover" value="22-Casper"><a href="#"><img class="img-border" src="images/img-casper.jpg"/></a></td>
+				<td></td>
+				<td></td>
+				<td class="inputField" valign="top">
+					<img src="images/img-skateselectver03.jpg"/>
+					<input type="text" placeholder="PHONE NUMBER" id="phoneid1" name="phone1" maxlength="10"   class="phoneNumber"/><div id="keyboardmain"></div>
+					<input type="button"  id="frmsubmit1" class="submitBtn"/>
+				</td>
+			</tr>
+			<tr><td colspan="7"><img src="images/img-skatebottombar.jpg"/></td></tr>
+		</table>
+		<table width="1080" border="0" cellspacing="0" cellpadding="0" id="PennySkate27" style="display:none">
+			<tr><td colspan="7"><div style="position:relative">
+				<div class="errorMsg" id="errorMsg2" style="display:none">Error goes Here</div>
+			<img src="images/img-skate27topbar.jpg"/></div></td></tr>
+			<tr>
+				<td><img src="images/img-skateleftbar_02.jpg"/></td>
+				<td class="borderover" value="27-Sweet Tooth"><a href="#"><img class="img-border" src="images/img-sweettooth.jpg"/></a></td>
+				<td class="borderover" value="27-Neon Shade"><a href="#"><img class="img-border" src="images/img-neonshade.jpg"/></a></td>
+				<td class="borderover" value="27-Black Out"><a href="#"><img class="img-border" src="images/img-blackout.jpg"/></a></td>
+				<td class="borderover" value="27-Red Down"><a href="#"><img class="img-border" src="images/img-reddown.jpg"/></a></td>
+				<td><img src="images/img-skaterightbar_02.jpg"/></td>
+				<td><img src="images/img-skateselectver01.jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="borderover" value="27-Burgandy"><a href="#"><img class="img-border" src="images/img-burgandy.jpg"/></a></td>
+				<td class="borderover" value="27-Toucan Tropicana"><a href="#"><img class="img-border" src="images/img-toucantropicana.jpg"/></a></td>
+				<td class="borderover" value="27-Ethiopia"><a href="#"><img class="img-border" src="images/img-ethiopia02.jpg"/></a></td>
+				<td class="borderover" value="27-Neo Tokyo"><a href="#"><img class="img-border" src="images/img-neotokyo.jpg"/></a></td>
+				<td></td>
+				<td><img src="images/img-skateselectver02.jpg"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="borderover" value="27-Idigo Tie Dye"><a href="#"><img class="img-border" src="images/img-idigotiedye.jpg"/></a></td>
+				<td class="borderover" value="27-Casper"><a href="#"><img class="img-border" src="images/img-casper.jpg"/></a></td>
+				<td></td>
+				<td></td>
+				<td class="inputField" valign="top">
+					<img src="images/img-skateselectver03.jpg"/>
+					<input type="text" placeholder="PHONE NUMBER" maxlength="10" id="phoneid2" name="phone2"  class="phoneNumber"/><div id="keyboardmain"></div>
+					<input type="button" id="frmsubmit2" onclick="clicktag();" class="submitBtn"/>
+				</td>
+			</tr>
+			<tr><td colspan="7"><img src="images/img-skatebottombar.jpg"/></td></tr>
+		</table>
+	</td></tr>
+	<tr><td colspan="3">
+		<div class="videoBg">
+		<video id="myVideo" width="1110" height="624" class="video-js vjs-default-skin" preload="auto"  autoplay="autoplay"
+			 data-setup='{}' >
+
+			<source src="images/GoodTimesRoll.mp4" type='video/mp4' >
+			</video>
+		</div>
+	</td></tr>
+</table>
+</form>
+</body>
+</html>
